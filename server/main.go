@@ -2,18 +2,20 @@ package main
 
 import (
 	"fmt"
-	"go-chat/config"
-	"go-chat/server/model"
-	"go-chat/server/process"
+	"github.com/go-chat/config"
+	"github.com/go-chat/server/model"
+	"github.com/go-chat/server/process"
+	"github.com/go-chat/server/redis"
 	"net"
 	"time"
 )
 
 func init() {
+	config.Init()
 	// 初始化 redis 连接池，全局唯一
 	redisInfo := config.Configuration.RedisInfo
 	fmt.Println("redisInfo", redisInfo)
-	initRedisPool(redisInfo.MaxIdle, redisInfo.MaxActive, time.Second*(redisInfo.IdleTimeout), redisInfo.Host)
+	pool := redis.InitRedisPool(redisInfo.MaxIdle, redisInfo.MaxActive, time.Second*(redisInfo.IdleTimeout), redisInfo.Host)
 
 	// 创建 userDao 用于操作用户信息
 	// 全局唯一 UserDao 实例：model.CurrentUserDao

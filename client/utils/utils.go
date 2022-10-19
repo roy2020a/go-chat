@@ -4,8 +4,8 @@ import (
 	"encoding/binary"
 	"encoding/json"
 	"errors"
-	"go-chat/client/logger"
-	common "go-chat/common/message"
+	"github.com/go-chat/client/logger"
+	common "github.com/go-chat/common/message"
 	"net"
 )
 

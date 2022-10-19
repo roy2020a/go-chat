@@ -3,9 +3,9 @@ package process
 import (
 	"encoding/json"
 	"fmt"
-	common "go-chat/common/message"
-	"go-chat/server/model"
-	"go-chat/server/utils"
+	common "github.com/go-chat/common/message"
+	"github.com/go-chat/server/model"
+	"github.com/go-chat/server/utils"
 )
 
 type GroupMessageProcess struct{}

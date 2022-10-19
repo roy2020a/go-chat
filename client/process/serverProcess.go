@@ -3,10 +3,10 @@ package process
 import (
 	"encoding/json"
 	"errors"
-	"go-chat/client/logger"
-	"go-chat/client/model"
-	"go-chat/client/utils"
-	common "go-chat/common/message"
+	"github.com/go-chat/client/logger"
+	"github.com/go-chat/client/model"
+	"github.com/go-chat/client/utils"
+	common "github.com/go-chat/common/message"
 	"net"
 )
 

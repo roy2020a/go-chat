@@ -1,4 +1,4 @@
-package main
+package redis
 
 import (
 	"time"
@@ -6,10 +6,8 @@ import (
 	"github.com/garyburd/redigo/redis"
 )
 
-var pool *redis.Pool
-
-func initRedisPool(maxIdle, maxActive int, idleTimeout time.Duration, host string) {
-	pool = &redis.Pool{
+func InitRedisPool(maxIdle, maxActive int, idleTimeout time.Duration, host string) *redis.Pool {
+	pool := &redis.Pool{
 		// 初始化链接数量
 		MaxIdle:     maxIdle,
 		MaxActive:   maxActive,
@@ -18,4 +16,6 @@ func initRedisPool(maxIdle, maxActive int, idleTimeout time.Duration, host strin
 			return redis.Dial("tcp", host)
 		},
 	}
+	return pool
+
 }

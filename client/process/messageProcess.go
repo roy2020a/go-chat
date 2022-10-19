@@ -2,9 +2,9 @@ package process
 
 import (
 	"encoding/json"
-	"go-chat/client/utils"
-	common "go-chat/common/message"
-	"go-chat/config"
+	"github.com/go-chat/client/utils"
+	common "github.com/go-chat/common/message"
+	"github.com/go-chat/config"
 	"net"
 )
 
